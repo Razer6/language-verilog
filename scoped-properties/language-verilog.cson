@@ -1,0 +1,3 @@
+'.source.verilog':
+  'editor':
+    'foldEndPattern': '\\s*(end(case|module)?|`endif)\\b'

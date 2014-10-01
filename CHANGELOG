@@ -1,0 +1,5 @@
+v 0.2.0
+  - Add additional keywords from Verilog IEEE Std 1800-2012
+
+v 0.1.0
+  - Initial import from TextMate bundle

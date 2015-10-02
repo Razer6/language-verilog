@@ -1,1 +1,179 @@
+'.source.verilog':
+  #A
+  'always_clock':
+    'prefix': 'a_c'
+    'body': """
+      always @ (posedge ${1:wire}) begin
+        $0
+      end
+    """
 
+  'always_clock_reset':
+    'prefix': 'a_cr'
+    'body': """
+      always @ (posedge ${1:clock} or ${2:reset}) begin
+        $0
+      end
+    """
+
+  'always':
+    'prefix': 'a_nc'
+    'body': """
+      always @ ( * ) begin
+        $0
+      end
+    """
+
+  #B
+
+  #C
+  'case':
+    'prefix': 'case'
+    'body': """
+      case (${1:condition})
+        ${2:value}: $0;
+        default: ;
+      endcase
+    """
+
+  #D
+
+  #E
+
+  #F
+
+  #G
+
+  #H
+
+  #I
+  'if':
+    'prefix': 'if'
+    'body': """
+      if (${1:condition}) begin
+        $0
+      end
+    """
+
+  'if-else':
+    'prefix': 'if-else'
+    'body': """
+      if (${1:condition}) begin
+        $0
+      end else begin
+
+      end
+    """
+
+  'if-elseif':
+    'prefix': 'if-elseif'
+    'body': """
+      if (${1:condition1}) begin
+        $0
+      end else if (${2:condition2) begin
+
+      end
+    """
+
+  'if-elseif-else':
+    'prefix': 'if-elseif-else'
+    'body': """
+      if (${1:condition1}) begin
+        $0
+      end else if (${2:condition2) begin
+
+      end else begin
+
+      end
+    """
+
+  'input':
+    'prefix': 'input'
+    'body': """
+      input $0
+    """
+
+  'initial':
+    'prefix': 'initial'
+    'body': """
+      initial begin
+        $0
+      end
+    """
+
+
+  #J
+
+  #K
+
+  #L
+
+  #M
+  'module':
+    'prefix': 'module'
+    'body': """
+      module ${1:module_name} ($0);
+
+      endmodule // $1
+    """
+
+  #N
+
+  #O
+  'output':
+    'prefix': 'output'
+    'body': """
+      output $0
+    """
+
+  #P
+
+  #Q
+
+  #R
+  'reg':
+    'prefix': 'reg'
+    'body': """
+      reg $0;
+    """
+
+  'reg_range':
+    'prefix': 'reg_range'
+    'body': """
+      reg [${1:left_range}:${2:right_range}] $0;
+    """
+
+  #S
+
+  #T
+
+  #U
+
+  #V
+
+  #W
+  'while':
+    'prefix': 'while'
+    'body': """
+      while (${1:wire}) begin
+        $0
+      end
+    """
+
+  'wire':
+    'prefix': 'wire'
+    'body': """
+      wire $0;
+    """
+
+  'wire_range':
+    'prefix': 'wire_range'
+    'body': """
+      wire [${1:left_range}:${2:right_range}] $0;
+    """
+
+  #X
+
+  #Y
+
+  #Z

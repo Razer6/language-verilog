@@ -1,7 +1,7 @@
 '.source.verilog':
-  #A
+#A
   'always_clock':
-    'prefix': 'a_c'
+    'prefix': 'alw_c'
     'body': """
       always @ (posedge ${1:wire}) begin
         $0
@@ -9,7 +9,7 @@
     """
 
   'always_clock_reset':
-    'prefix': 'a_cr'
+    'prefix': 'alw_cr'
     'body': """
       always @ (posedge ${1:clock} or ${2:reset}) begin
         $0
@@ -17,16 +17,48 @@
     """
 
   'always':
-    'prefix': 'a_nc'
+    'prefix': 'alw'
     'body': """
       always @ ( * ) begin
         $0
       end
     """
 
-  #B
+  'always_ff_clock':
+    'prefix': 'alw_ff_c'
+    'body': """
+      always_ff @ (posedge ${1:clock}) begin
+        $0
+      end
+    """
 
-  #C
+  'always_ff_clock_reset':
+    'prefix': 'alw_ff_cr'
+    'body': """
+      always_ff @ (posedge ${1:clock} or ${2:reset}) begin
+        $0
+      end
+    """
+
+  'always_latch':
+    'prefix': 'alw_latch'
+    'body': """
+      always_latch begin
+        $0
+      end
+    """
+
+  'always_comb':
+    'prefix': 'alw_comb'
+    'body': """
+      always_comb begin
+        $0
+      end
+    """
+
+#B
+
+#C
   'case':
     'prefix': 'case'
     'body': """
@@ -36,17 +68,17 @@
       endcase
     """
 
-  #D
+#D
 
-  #E
+#E
 
-  #F
+#F
 
-  #G
+#G
 
-  #H
+#H
 
-  #I
+#I
   'if':
     'prefix': 'if'
     'body': """
@@ -101,14 +133,13 @@
       end
     """
 
+#J
 
-  #J
+#K
 
-  #K
+#L
 
-  #L
-
-  #M
+#M
   'module':
     'prefix': 'module'
     'body': """
@@ -117,41 +148,43 @@
       endmodule // $1
     """
 
-  #N
+#N
 
-  #O
+#O
   'output':
     'prefix': 'output'
     'body': """
       output $0
     """
 
-  #P
+#P
 
-  #Q
+#Q
 
-  #R
+#R
   'reg':
     'prefix': 'reg'
     'body': """
-      reg $0;
+      reg ${1:name};
+      $0
     """
 
   'reg_range':
     'prefix': 'reg_range'
     'body': """
-      reg [${1:left_range}:${2:right_range}] $0;
+      reg [${1:left_range}:${2:right_range}] ${3:name};
+      $0
     """
 
-  #S
+#S
 
-  #T
+#T
 
-  #U
+#U
 
-  #V
+#V
 
-  #W
+#W
   'while':
     'prefix': 'while'
     'body': """
@@ -163,17 +196,19 @@
   'wire':
     'prefix': 'wire'
     'body': """
-      wire $0;
+      wire ${1:name};
+      $0
     """
 
   'wire_range':
     'prefix': 'wire_range'
     'body': """
-      wire [${1:left_range}:${2:right_range}] $0;
+      wire [${1:left_range}:${2:right_range}] ${3:name};
+      $0
     """
 
-  #X
+#X
 
-  #Y
+#Y
 
-  #Z
+#Z

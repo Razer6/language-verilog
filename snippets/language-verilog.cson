@@ -133,11 +133,25 @@
       end
     """
 
+  'ifdef_simulation':
+    'prefix': 'ifdef_sim'
+    'body': """
+      'ifdef SIMULATION
+        $0
+      'endif
+    """
+
+
 #J
 
 #K
 
 #L
+  'localparam':
+    'prefix': 'localparam'
+    'body': """
+      localparam  ${1:param_name} = ${2:param_value}:
+    """
 
 #M
   'module':
@@ -179,6 +193,12 @@
 #S
 
 #T
+  'timescale':
+    'prefix': 'timescale'
+    'body': """
+      'timescale ${1:time} / ${2:time}
+      $0
+    """
 
 #U
 

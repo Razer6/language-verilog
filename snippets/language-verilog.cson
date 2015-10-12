@@ -4,7 +4,7 @@
     'prefix': 'alw_c'
     'body': """
       always @ (posedge ${1:wire}) begin
-        $0
+      \t$0
       end
     """
 
@@ -12,7 +12,7 @@
     'prefix': 'alw_cr'
     'body': """
       always @ (posedge ${1:clock} or ${2:reset}) begin
-        $0
+      \t$0
       end
     """
 
@@ -20,7 +20,7 @@
     'prefix': 'alw'
     'body': """
       always @ ( * ) begin
-        $0
+      \t$0
       end
     """
 
@@ -28,7 +28,7 @@
     'prefix': 'alw_ff_c'
     'body': """
       always_ff @ (posedge ${1:clock}) begin
-        $0
+      \t$0
       end
     """
 
@@ -36,7 +36,7 @@
     'prefix': 'alw_ff_cr'
     'body': """
       always_ff @ (posedge ${1:clock} or ${2:reset}) begin
-        $0
+      \t$0
       end
     """
 
@@ -44,7 +44,7 @@
     'prefix': 'alw_latch'
     'body': """
       always_latch begin
-        $0
+      \t$0
       end
     """
 
@@ -52,7 +52,7 @@
     'prefix': 'alw_comb'
     'body': """
       always_comb begin
-        $0
+      \t$0
       end
     """
 
@@ -63,8 +63,8 @@
     'prefix': 'case'
     'body': """
       case (${1:condition})
-        ${2:value}: $0;
-        default: ;
+      \t${2:value}: $0;
+      \tdefault: ;
       endcase
     """
 
@@ -83,7 +83,7 @@
     'prefix': 'if'
     'body': """
       if (${1:condition}) begin
-        $0
+      \t$0
       end
     """
 
@@ -91,9 +91,9 @@
     'prefix': 'if-else'
     'body': """
       if (${1:condition}) begin
-        $0
+      \t$0
       end else begin
-
+      \t
       end
     """
 
@@ -101,9 +101,9 @@
     'prefix': 'if-elseif'
     'body': """
       if (${1:condition1}) begin
-        $0
+      \t$0
       end else if (${2:condition2) begin
-
+      \t
       end
     """
 
@@ -111,11 +111,11 @@
     'prefix': 'if-elseif-else'
     'body': """
       if (${1:condition1}) begin
-        $0
+      \t$0
       end else if (${2:condition2) begin
-
+      \t
       end else begin
-
+      \t
       end
     """
 
@@ -129,7 +129,7 @@
     'prefix': 'initial'
     'body': """
       initial begin
-        $0
+      \t$0
       end
     """
 
@@ -137,7 +137,7 @@
     'prefix': 'ifdef_sim'
     'body': """
       'ifdef SIMULATION
-        $0
+      \t$0
       'endif
     """
 
@@ -150,7 +150,7 @@
   'localparam':
     'prefix': 'localparam'
     'body': """
-      localparam  ${1:param_name} = ${2:param_value}:
+      localparam  ${1:param_name} = ${2:param_value};
     """
 
 #M
@@ -158,7 +158,7 @@
     'prefix': 'module'
     'body': """
       module ${1:module_name} ($0);
-
+      \t
       endmodule // $1
     """
 
@@ -209,7 +209,7 @@
     'prefix': 'while'
     'body': """
       while (${1:wire}) begin
-        $0
+      \t$0
       end
     """
 

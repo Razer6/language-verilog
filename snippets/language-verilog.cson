@@ -56,6 +56,21 @@
       end
     """
 
+  'assign single':
+    'prefix': 'assign_s'
+    'body': """
+      assign ${1:destination} = (${2:source});
+      $0
+    """
+
+  'assign multi':
+    'prefix': 'assign_m'
+    'body': """
+      assign ${1:destination} = (${2:question}) ? ${3:true_source} : ${4:else_source}
+      $0
+    """
+
+
 #B
 
 #C

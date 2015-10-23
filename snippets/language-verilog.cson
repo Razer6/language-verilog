@@ -1,7 +1,7 @@
 '.source.verilog':
 #A
   'always_clock':
-    'prefix': 'alw_c'
+    'prefix': 'always_c'
     'body': """
       always @ (posedge ${1:wire}) begin
       \t$0
@@ -9,7 +9,7 @@
     """
 
   'always_clock_reset':
-    'prefix': 'alw_cr'
+    'prefix': 'always_cr'
     'body': """
       always @ (posedge ${1:clock} or ${2:reset}) begin
       \t$0
@@ -17,7 +17,7 @@
     """
 
   'always':
-    'prefix': 'alw'
+    'prefix': 'always'
     'body': """
       always @ ( * ) begin
       \t$0
@@ -25,7 +25,7 @@
     """
 
   'always_ff_clock':
-    'prefix': 'alw_ff_c'
+    'prefix': 'always_ff_c'
     'body': """
       always_ff @ (posedge ${1:clock}) begin
       \t$0
@@ -33,7 +33,7 @@
     """
 
   'always_ff_clock_reset':
-    'prefix': 'alw_ff_cr'
+    'prefix': 'always_ff_cr'
     'body': """
       always_ff @ (posedge ${1:clock} or ${2:reset}) begin
       \t$0
@@ -41,7 +41,7 @@
     """
 
   'always_latch':
-    'prefix': 'alw_latch'
+    'prefix': 'always_latch'
     'body': """
       always_latch begin
       \t$0
@@ -49,7 +49,7 @@
     """
 
   'always_comb':
-    'prefix': 'alw_comb'
+    'prefix': 'always_comb'
     'body': """
       always_comb begin
       \t$0
@@ -187,6 +187,12 @@
     """
 
 #P
+  'parameter':
+    'prefix': 'parameter'
+    'body': """
+      parameter ${1:parameter_type} ${2:parameter_name} = ${3:parameter_value},
+      $0
+    """
 
 #Q
 

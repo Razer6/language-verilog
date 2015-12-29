@@ -1,0 +1,255 @@
+'.source.verilog':
+#A
+  'always_clock':
+    'prefix': 'always_c'
+    'body': """
+      always @ (posedge ${1:wire}) begin
+      \t$0
+      end
+    """
+
+  'always_clock_reset':
+    'prefix': 'always_cr'
+    'body': """
+      always @ (posedge ${1:clock} or ${2:reset}) begin
+      \t$0
+      end
+    """
+
+  'always':
+    'prefix': 'always'
+    'body': """
+      always @ ( * ) begin
+      \t$0
+      end
+    """
+
+  'always_ff_clock':
+    'prefix': 'always_ff_c'
+    'body': """
+      always_ff @ (posedge ${1:clock}) begin
+      \t$0
+      end
+    """
+
+  'always_ff_clock_reset':
+    'prefix': 'always_ff_cr'
+    'body': """
+      always_ff @ (posedge ${1:clock} or ${2:reset}) begin
+      \t$0
+      end
+    """
+
+  'always_latch':
+    'prefix': 'always_latch'
+    'body': """
+      always_latch begin
+      \t$0
+      end
+    """
+
+  'always_comb':
+    'prefix': 'always_comb'
+    'body': """
+      always_comb begin
+      \t$0
+      end
+    """
+
+  'assign single':
+    'prefix': 'assign_s'
+    'body': """
+      assign ${1:destination} = (${2:source});
+      $0
+    """
+
+  'assign multi':
+    'prefix': 'assign_m'
+    'body': """
+      assign ${1:destination} = (${2:question}) ? ${3:true_source} : ${4:else_source}
+      $0
+    """
+
+
+#B
+
+#C
+  'case':
+    'prefix': 'case'
+    'body': """
+      case (${1:condition})
+      \t${2:value}: $0;
+      \tdefault: ;
+      endcase
+    """
+
+#D
+
+#E
+
+#F
+
+#G
+
+#H
+
+#I
+  'if':
+    'prefix': 'if'
+    'body': """
+      if (${1:condition}) begin
+      \t$0
+      end
+    """
+
+  'if-else':
+    'prefix': 'if-else'
+    'body': """
+      if (${1:condition}) begin
+      \t$0
+      end else begin
+      \t
+      end
+    """
+
+  'if-elseif':
+    'prefix': 'if-elseif'
+    'body': """
+      if (${1:condition1}) begin
+      \t$0
+      end else if (${2:condition2) begin
+      \t
+      end
+    """
+
+  'if-elseif-else':
+    'prefix': 'if-elseif-else'
+    'body': """
+      if (${1:condition1}) begin
+      \t$0
+      end else if (${2:condition2) begin
+      \t
+      end else begin
+      \t
+      end
+    """
+
+  'input':
+    'prefix': 'input'
+    'body': """
+      input $0
+    """
+
+  'initial':
+    'prefix': 'initial'
+    'body': """
+      initial begin
+      \t$0
+      end
+    """
+
+  'ifdef_simulation':
+    'prefix': 'ifdef_sim'
+    'body': """
+      'ifdef SIMULATION
+      \t$0
+      'endif
+    """
+
+
+#J
+
+#K
+
+#L
+  'localparam':
+    'prefix': 'localparam'
+    'body': """
+      localparam  ${1:param_name} = ${2:param_value};
+    """
+
+#M
+  'module':
+    'prefix': 'module'
+    'body': """
+      module ${1:module_name} ($0);
+      \t
+      endmodule // $1
+    """
+
+#N
+
+#O
+  'output':
+    'prefix': 'output'
+    'body': """
+      output $0
+    """
+
+#P
+  'parameter':
+    'prefix': 'parameter'
+    'body': """
+      parameter ${1:parameter_type} ${2:parameter_name} = ${3:parameter_value},
+      $0
+    """
+
+#Q
+
+#R
+  'reg':
+    'prefix': 'reg'
+    'body': """
+      reg ${1:name};
+      $0
+    """
+
+  'reg_range':
+    'prefix': 'reg_range'
+    'body': """
+      reg [${1:left_range}:${2:right_range}] ${3:name};
+      $0
+    """
+
+#S
+
+#T
+  'timescale':
+    'prefix': 'timescale'
+    'body': """
+      'timescale ${1:time} / ${2:time}
+      $0
+    """
+
+#U
+
+#V
+
+#W
+  'while':
+    'prefix': 'while'
+    'body': """
+      while (${1:wire}) begin
+      \t$0
+      end
+    """
+
+  'wire':
+    'prefix': 'wire'
+    'body': """
+      wire ${1:name};
+      $0
+    """
+
+  'wire_range':
+    'prefix': 'wire_range'
+    'body': """
+      wire [${1:left_range}:${2:right_range}] ${3:name};
+      $0
+    """
+
+#X
+
+#Y
+
+#Z

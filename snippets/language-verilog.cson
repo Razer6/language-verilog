@@ -168,6 +168,13 @@
       localparam  ${1:param_name} = ${2:param_value};
     """
 
+  'logic_range':
+    'prefix': 'logic_range'
+    'body': """
+      logic [${1:left_range}:${2:right_range}] ${3:name};
+      $0
+    """
+
 #M
   'module':
     'prefix': 'module'

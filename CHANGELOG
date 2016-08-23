@@ -1,3 +1,6 @@
+v 0.5.0 (unreleased)
+  - Make semaphore a keyword
+   
 v 0.4.0
   - Fix single line comments
   - Add more snippets

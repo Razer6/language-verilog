@@ -58,6 +58,10 @@
         'name': 'constant.numeric.sized_integer.verilog'
       }
       {
+        'match': '\\s\'[bBoOdDhH][a-fA-F0-9_xXzZ]+\\b'
+        'name': 'constant.numeric.unsized_integer.verilog'
+      }
+      {
         'captures':
           '1':
             'name': 'constant.numeric.integer.verilog'

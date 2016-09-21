@@ -151,9 +151,9 @@
   'ifdef_simulation':
     'prefix': 'ifdef_sim'
     'body': """
-      'ifdef SIMULATION
+      `ifdef SIMULATION
       \t$0
-      'endif
+      `endif
     """
 
 
@@ -224,7 +224,7 @@
   'timescale':
     'prefix': 'timescale'
     'body': """
-      'timescale ${1:time} / ${2:time}
+      `timescale ${1:time} / ${2:time}
       $0
     """
 

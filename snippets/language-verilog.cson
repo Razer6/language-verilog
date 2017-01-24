@@ -117,7 +117,7 @@
     'body': """
       if (${1:condition1}) begin
       \t$0
-      end else if (${2:condition2) begin
+      end else if (${2:condition2}) begin
       \t
       end
     """
@@ -127,7 +127,7 @@
     'body': """
       if (${1:condition1}) begin
       \t$0
-      end else if (${2:condition2) begin
+      end else if (${2:condition2}) begin
       \t
       end else begin
       \t
